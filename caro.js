@@ -1,12 +1,15 @@
 var data = '';
 let A = [];
 let B = [];
-var count = 1;
+var count = 0;
 let player;
 let inGame = true;
-start();
+let turn = 0;
 
+start();
+// start cho phép mình đưa biến count về 0, khởi tạo lại mảng A in vào bảng thông qua draw
 function start() {
+    count = 0;
     for (let i = 0; i < 12; i++) {
         B = new Array();
         for (let j = 0; j < 16; j++) {
@@ -21,50 +24,64 @@ function start() {
     }
     draw()
 }
+
+// changeValue cho phép em thay đổi player là x hay o và ghi vào mảng tại vị trí đó và kiểm tra chiến thắng thông qua checkWin
+
 function changeValue(x, y, element) {
     if (inGame == false) return;
     if (A[x][y] != '') return;
     count++;
     if (count % 2 == 0) {
-        player = 'x';
+        player = 'x'
+        turn = count/2;
+        document.getElementById('pl').innerHTML='Player: o'
     } else {
         player = 'o';
+        turn = (count+1)/2;
+        document.getElementById('pl').innerHTML='Player: x'
     }
+    document.getElementById('turn').innerHTML= `Turn: ${turn}`;
         element.innerText = player;
         A[x][y] = player;
-        checkWin(x, y, player); 
+        checkWin(x, y, player,turn); 
          console.log(A);     
 }
 
-function checkWin(x, y, player) {
+// checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
+
+function checkWin(x, y, player,turn) {
     for (let i = 0; i < 11; i++) {
         for (let j = 0; j < 15; j++) {
             if (i == x && j == y) {
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player)) {
-                    notify(player);
+                    notify(player,turn);
                 }
                 if ((A[i][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player && A[i + 4][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player && A[i - 4][j] == player)) {
-                    notify(player)
+                    notify(player,turn)
                 }
                 if ((A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player && A[i + 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player && A[i - 4][j - 4] == player)) {
-                    notify(player)
+                    notify(player,turn)
                 }
                 if ((A[i][j] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player && A[i + 4][j - 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player)) {
-                    notify(player)
+                    notify(player,turn)
                 }
 
             }
         }
     }
 }
-function notify(player) {
-    alert(`${player} win`);
+// notify thông báo 
+function notify(player,turn) {
+    alert(`${player} win with ${turn} turn`);
     inGame = false;
 }
+
+// vẽ bảng và tạo sự kiện onclick lên các vị trí của bảng
+
 function draw() {
     if (!inGame) {
         data = '';
@@ -86,9 +103,12 @@ function draw() {
     document.getElementById('caroTable').innerHTML = data;
 
 }
+
+// resetBtn giúp reset lại game 
+
 resetBtn.onclick = function () {
     inGame = false;
     start()
     inGame = true;
-    // window.location.reload();
+    // window.location.reload(); load lại trang cũng là 1 cách mà em nghĩ đến
 }
