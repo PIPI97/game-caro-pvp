@@ -45,7 +45,7 @@ function changeValue(x, y, element) {
         element.innerText = player;
         A[x][y] = player;
         checkWin(x, y, player,turn); 
-         console.log(A);     
+        //  console.log(A);     
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
@@ -58,27 +58,25 @@ function checkWin(x, y, player,turn) {
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j + 1] == player && A[i][j + 2] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player) ||
-                    (A[i][j] == player && A[i][j + 1] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player)
-                    ) {
-                    notify(player,turn);
-                }
-                if ((A[i][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player && A[i + 4][j] == player) ||
+                    (A[i][j] == player && A[i][j + 1] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player) ||
+             
+             
+             
+                    (A[i][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player && A[i + 4][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player && A[i - 4][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i + 1][j] == player && A[i + 2][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player) ||
-                    (A[i][j] == player && A[i + 1][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player)
-                    ) {
-                    notify(player,turn)
-                }
-                if ((A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player && A[i + 4][j + 4] == player) ||
+                    (A[i][j] == player && A[i + 1][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player) ||
+                   
+
+                    (A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player && A[i + 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player && A[i - 4][j - 4] == player) ||
                     (A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player) ||
                     (A[i][j] == player && A[i + 1][j + 1] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player) ||
-                    (A[i][j] == player && A[i - 1][j - 1] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player)
-                    ) {
-                    notify(player,turn)
-                }
-                if ((A[i][j] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player && A[i + 4][j - 4] == player) ||
+                    (A[i][j] == player && A[i - 1][j - 1] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player) ||
+                    
+                    
+                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player && A[i + 4][j - 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
@@ -88,6 +86,7 @@ function checkWin(x, y, player,turn) {
                 }
 
             }
+            // console.log(x,y);
         }
     }
 }
