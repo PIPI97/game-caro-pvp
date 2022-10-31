@@ -45,7 +45,7 @@ function changeValue(x, y, element) {
     element.innerText = player;
     A[x][y] = player;
     checkWin(x, y, player, turn);
-    //  console.log(A);     
+    //  console.log(A);   
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
