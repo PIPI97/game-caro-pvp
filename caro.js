@@ -33,13 +33,13 @@ function changeValue(x, y, element) {
     if (A[x][y] != '') return;
     count++;
     if (count % 2 == 0) {
-        player = 'x'
+        player = 'x';
         turn = count / 2;
-        document.getElementById('pl').innerHTML = 'Player: o'
+        document.getElementById('pl').innerHTML = 'Player: o';
     } else {
         player = 'o';
         turn = (count + 1) / 2;
-        document.getElementById('pl').innerHTML = 'Player: x'
+        document.getElementById('pl').innerHTML = 'Player: x';
     }
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
     element.innerText = player;
@@ -82,7 +82,7 @@ function checkWin(x, y, player, turn) {
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
                     (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
                 ) {
-                    notify(player, turn)
+                    notify(player, turn);
                 }
 
             }
@@ -124,5 +124,8 @@ resetBtn.onclick = function () {
     inGame = false;
     start()
     inGame = true;
+    document.getElementById('pl').innerHTML = 'Player: o';
+    document.getElementById('turn').innerHTML = 'Turn: 1';
+    
     // window.location.reload(); load lại trang cũng là 1 cách mà em nghĩ đến
 }
