@@ -35,11 +35,11 @@ function changeValue(x, y, element) {
     if (count % 2 == 0) {
         player = 'x';
         turn = count / 2;
-        document.getElementById('pl').innerHTML = 'Player: o';
+        document.getElementById("pl").innerHTML = '<img src="images/Opng.png">';
     } else {
         player = 'o';
         turn = (count + 1) / 2;
-        document.getElementById('pl').innerHTML = 'Player: x';
+        document.getElementById("pl").innerHTML = '<img src="images/Xpng.png">';
     }
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
     element.innerText = player;
@@ -124,8 +124,10 @@ resetBtn.onclick = function () {
     inGame = false;
     start()
     inGame = true;
-    document.getElementById('pl').innerHTML = 'Player: o';
+    document.getElementById("pl").innerHTML = '<img src="images/Opng.png">';
     document.getElementById('turn').innerHTML = 'Turn: 1';
-    
     // window.location.reload(); load lại trang cũng là 1 cách mà em nghĩ đến
 }
+
+
+
