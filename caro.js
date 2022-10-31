@@ -34,64 +34,63 @@ function changeValue(x, y, element) {
     count++;
     if (count % 2 == 0) {
         player = 'x'
-        turn = count/2;
-        document.getElementById('pl').innerHTML='Player: o'
+        turn = count / 2;
+        document.getElementById('pl').innerHTML = 'Player: o'
     } else {
         player = 'o';
-        turn = (count+1)/2;
-        document.getElementById('pl').innerHTML='Player: x'
+        turn = (count + 1) / 2;
+        document.getElementById('pl').innerHTML = 'Player: x'
     }
-    document.getElementById('turn').innerHTML= `Turn: ${turn}`;
-        element.innerText = player;
-        A[x][y] = player;
-        checkWin(x, y, player,turn); 
-        //  console.log(A);     
+    document.getElementById('turn').innerHTML = `Turn: ${turn}`;
+    element.innerText = player;
+    A[x][y] = player;
+    checkWin(x, y, player, turn);
+    //  console.log(A);     
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
 
-function checkWin(x, y, player,turn) {
+function checkWin(x, y, player, turn) {
     for (let i = 0; i < 11; i++) {
         for (let j = 0; j < 15; j++) {
             if (i == x && j == y) {
+                    // chiều ngang đúng
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j + 1] == player && A[i][j + 2] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player) ||
                     (A[i][j] == player && A[i][j + 1] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player) ||
-             
-             
-             
+
+                    // chiều dọc đúng            
                     (A[i][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player && A[i + 4][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player && A[i - 4][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i + 1][j] == player && A[i + 2][j] == player) ||
                     (A[i][j] == player && A[i - 1][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player) ||
                     (A[i][j] == player && A[i + 1][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player) ||
-                   
 
+                    //chéo chính đúng
                     (A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player && A[i + 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player && A[i - 4][j - 4] == player) ||
                     (A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player) ||
                     (A[i][j] == player && A[i + 1][j + 1] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player) ||
                     (A[i][j] == player && A[i - 1][j - 1] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player) ||
-                    
-                    
+
+                    // chéo phụ đúng                    
                     (A[i][j] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player && A[i + 4][j - 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
-                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player) 
-                    ) {
-                    notify(player,turn)
+                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
+                ) {
+                    notify(player, turn)
                 }
 
             }
-            // console.log(x,y);
         }
     }
 }
 // notify thông báo 
-function notify(player,turn) {
+function notify(player, turn) {
     alert(`${player} win with ${turn} turn`);
     inGame = false;
 }
@@ -106,7 +105,7 @@ function draw() {
         data += '<tr>';
         for (j = 0; j < 16; j++) {
             if (i == 0 && j == 0) {
-                data += ' <td> &nbsp;&nbsp; </td>';
+                data += ' <td> &nbsp; </td>';
             }
             else if (i == 0 || j == 0) {
                 data += '<td>' + A[i][j] + '</td>';
@@ -119,7 +118,6 @@ function draw() {
     document.getElementById('caroTable').innerHTML = data;
 
 }
-
 // resetBtn giúp reset lại game 
 
 resetBtn.onclick = function () {
