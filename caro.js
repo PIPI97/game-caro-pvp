@@ -54,19 +54,35 @@ function checkWin(x, y, player,turn) {
         for (let j = 0; j < 15; j++) {
             if (i == x && j == y) {
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
-                    (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player)) {
+                    (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
+                    (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j + 1] == player && A[i][j + 2] == player) ||
+                    (A[i][j] == player && A[i][j - 1] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player) ||
+                    (A[i][j] == player && A[i][j + 1] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player)
+                    ) {
                     notify(player,turn);
                 }
                 if ((A[i][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player && A[i + 4][j] == player) ||
-                    (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player && A[i - 4][j] == player)) {
+                    (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player && A[i - 4][j] == player) ||
+                    (A[i][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i + 1][j] == player && A[i + 2][j] == player) ||
+                    (A[i][j] == player && A[i - 1][j] == player && A[i + 1][j] == player && A[i + 2][j] == player && A[i + 3][j] == player) ||
+                    (A[i][j] == player && A[i + 1][j] == player && A[i - 1][j] == player && A[i - 2][j] == player && A[i - 3][j] == player)
+                    ) {
                     notify(player,turn)
                 }
                 if ((A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player && A[i + 4][j + 4] == player) ||
-                    (A[i][j] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player && A[i - 4][j - 4] == player)) {
+                    (A[i][j] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player && A[i - 4][j - 4] == player) ||
+                    (A[i][j] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player) ||
+                    (A[i][j] == player && A[i + 1][j + 1] == player && A[i - 1][j - 1] == player && A[i - 2][j - 2] == player && A[i - 3][j - 3] == player) ||
+                    (A[i][j] == player && A[i - 1][j - 1] == player && A[i + 1][j + 1] == player && A[i + 2][j + 2] == player && A[i + 3][j + 3] == player)
+                    ) {
                     notify(player,turn)
                 }
                 if ((A[i][j] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player && A[i + 4][j - 4] == player) ||
-                    (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player)) {
+                    (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player) ||
+                    (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player) ||
+                    (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
+                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player) 
+                    ) {
                     notify(player,turn)
                 }
 
@@ -96,7 +112,7 @@ function draw() {
                 data += '<td>' + A[i][j] + '</td>';
             }
             else {
-                data += `<td onclick ="changeValue(${i},${j},this);">  </td>`;
+                data += `<td class="big-text" onclick ="changeValue(${i},${j},this);">  </td>`;
             }
         } data += '</tr>';
     }

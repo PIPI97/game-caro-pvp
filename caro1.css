@@ -10,6 +10,9 @@ table{
     margin-left: auto;
     margin-right: auto;
     border-collapse:  collapse;
+    box-shadow: 0 0 50px 0;
+    background-color: white;
+    opacity: 80%;
 }
 td:hover{
     background-color: rgb(238, 155, 155);
@@ -17,9 +20,14 @@ td:hover{
 }
 tr,td{
     border: 1px black solid;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     text-align: center;
+
+}
+.big-text{
+    font-size: 20px;
+    font-weight: bold;
 }
 table td{
     transition: all .2s linear;
@@ -40,6 +48,25 @@ caption{
     border-radius: 20px;
     width: 100px;
     height: 50px;
-    margin-left: 47%;
-    margin-top: 10px;
+    margin-left: 20px;
+}
+.wrap{
+    display: flex;
+    width: 1300px;
+    height: 700px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leftside{
+    width: 150px;
+    height: 400px;
+    margin-top: 100px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-right: 8px;
+    padding-left: 20px;
+    box-shadow: 0 0 20px 0;
+    background-color: rgb(150, 112, 241);
+    opacity: 80%;
 }

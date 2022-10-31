@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="caro1.css">
 </head>
+
 <body>
-    <span id="turn">Turn: 1</span>
-    <span id="pl">Player: o </span>
-    <table>    
-    <caption><h1>CARO GAME</h1></caption> <tbody id="caroTable"></tbody>
-    </table>
-    <input type="button" value="Reset" id="resetBtn">
+    <div class="wrap">
+        <div class=" leftside ">
+            <br><br>
+            <span id="turn">Turn: 1</span>
+            <br><br><br><br>
+            <span id="pl">Player: o </span>
+            <br><br><br><br>
+            <input type="button" value="Reset" id="resetBtn">
+        </div>
+        <div>
+            <table>
+                <caption>
+                    <h1>CARO GAME</h1>
+                </caption>
+                <tbody id="caroTable"></tbody>
+            </table>
+        </div>
+    </div>
     <script src="caro.js">
     </script>
+
 </body>
+
 </html>
