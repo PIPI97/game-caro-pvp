@@ -1,0 +1,55 @@
+.wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+    height: 750px;
+   display: flex;
+   background: url(https://cdn.sforum.vn/sforum/wp-content/uploads/2022/02/3-31.jpg);
+}
+.div1{
+    width: 600px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 10%;
+    border-right: 5px solid rgb(209, 141, 141);
+}
+.div2{
+    width: 600px;
+    height: 600px;
+    margin-left: 50px;
+    margin-top: 100px;
+    background: url(https://media3.giphy.com/media/RtdRhc7TxBxB0YAsK6/giphy.gif?cid=790b761171c29da38e5a7fa2f62569b0172650a551164949&rid=giphy.gif&ct=g); 
+    width: 500px; 
+    height: 500px;
+
+}
+img {
+    width: 500px;
+    height: 500px;
+}
+
+table {
+    width: 300px;
+    height: 50px;
+    padding-left: 100px;
+    margin-left: 100px; 
+    margin-top: 150px;
+  
+
+}
+table>caption {
+    color: rgb(251, 0, 0);
+    font-size: 40px;
+    font-weight:900
+}
+.buttonPlay {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(176, 182, 234);
+    border-radius: 20px;
+}
+
+.buttonPlay:hover {
+    background-color: rgb(212, 54, 54);
+    cursor: pointer;
+}
