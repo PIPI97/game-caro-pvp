@@ -7,6 +7,7 @@ let inGame = true;
 let turn = 0;
 
 start();
+
 // start cho phép mình đưa biến count về 0, khởi tạo lại mảng A in vào bảng thông qua draw
 function start() {
     count = 0;
@@ -25,7 +26,7 @@ function start() {
     draw()
 }
 
-// changeValue cho phép em thay đổi player là x hay o và ghi vào mảng tại vị trí đó và kiểm tra chiến thắng thông qua checkWin
+// changeValue cho phép em thay đổi player là x hay o, ghi vào mảng tại vị trí đó và kiểm tra chiến thắng thông qua checkWin
 
 function changeValue(x, y, element) {
     if (inGame == false) return;
