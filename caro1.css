@@ -28,7 +28,6 @@ tr,td{
 }
 .big-text:hover{
     background-color: rgb(100, 119, 241);
-    /* cursor: pointer; */
     cursor: url(images/download.png),auto
 }
 .big-text:active{
