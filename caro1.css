@@ -8,6 +8,7 @@ body{
     box-sizing: border-box;
     margin: 0;
 }
+
 table{
     border: 3px solid rgb(43, 12, 102);
     margin-left: auto;
@@ -27,7 +28,8 @@ tr,td{
 }
 .big-text:hover{
     background-color: rgb(100, 119, 241);
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: url(images/download.png),auto
 }
 .big-text:active{
     background-color: rgb(60, 14, 146);
@@ -43,6 +45,8 @@ table td{
 #resetBtn:hover{
     background-color: rgb(171, 213, 16);
     cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
     
 }
 #resetBtn{
