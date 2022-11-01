@@ -16,10 +16,7 @@ table{
     background-color: white;
     opacity: 90%;
 }
-td:hover{
-    background-color: rgb(100, 119, 241);
-    cursor: pointer;
-}
+
 tr,td{
     border: 1px rgb(31, 17, 228) solid;
     width: 50px;
@@ -28,6 +25,13 @@ tr,td{
     box-shadow: 0 0 2px 0;
 
 }
+.big-text:hover{
+    background-color: rgb(100, 119, 241);
+    cursor: pointer;
+}
+.big-text:active{
+    background-color: rgb(60, 14, 146);
+}
 .big-text{
     font-size:30px;
     font-weight: bold;
@@ -35,9 +39,6 @@ tr,td{
 }
 table td{
     transition: all .2s linear;
-}
-td:active{
-    background-color: rgb(60, 14, 146);
 }
 #resetBtn:hover{
     background-color: rgb(171, 213, 16);

@@ -49,8 +49,7 @@ function changeValue(x, y, element) {
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
     element.innerText = player;
     A[x][y] = player;
-    checkWin(x, y, player, turn,element);
-    //  console.log(A);   
+    checkWin(x, y, player, turn,element);  
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
@@ -59,7 +58,6 @@ function checkWin(x, y, player, turn,element) {
     for (let i = 1; i <= 11; i++) {
         for (let j = 1; j <= 15; j++) {
             if (i == x && j == y) {
-                console.log(element);
                     // chiều ngang đúng
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
@@ -111,10 +109,10 @@ function draw() {
         data += '<tr>';
         for (j = 0; j < 16; j++) {
             if (i == 0 && j == 0) {
-                data += '<td style="color: blue; background-color: rgb(106, 183, 210);"> Pi97 </td>';
+                data += '<td style="color: blue; background-color: rgb(106, 183, 210);cursor: no-drop;"> Pi97 </td>';
             }
             else if (i == 0 || j == 0) {
-                data += '<td>' + A[i][j] + '</td>';
+                data += '<td style="cursor: no-drop;">' + A[i][j] + '</td>';
             }
             else {
                 data += `<td class="big-text" onclick ="changeValue(${i},${j},this);">  </td>`;
