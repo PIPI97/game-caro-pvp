@@ -11,7 +11,7 @@ start();
 // start cho phép mình đưa biến count về 0, khởi tạo lại mảng A in vào bảng thông qua draw
 function start() {
     count = 0;
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 13; i++) {
         B = new Array();
         for (let j = 0; j < 16; j++) {
             if (i == 0)
@@ -49,16 +49,17 @@ function changeValue(x, y, element) {
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
     element.innerText = player;
     A[x][y] = player;
-    checkWin(x, y, player, turn);
+    checkWin(x, y, player, turn,element);
     //  console.log(A);   
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
 
-function checkWin(x, y, player, turn) {
-    for (let i = 0; i < 11; i++) {
-        for (let j = 0; j < 15; j++) {
+function checkWin(x, y, player, turn,element) {
+    for (let i = 1; i <= 11; i++) {
+        for (let j = 1; j <= 15; j++) {
             if (i == x && j == y) {
+                console.log(element);
                     // chiều ngang đúng
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
@@ -85,7 +86,7 @@ function checkWin(x, y, player, turn) {
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
-                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
+                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player) 
                 ) {
                     notify(player, turn);
                 }
