@@ -29,7 +29,7 @@ function start() {
 // changeValue cho phép em thay đổi player là x hay o, ghi vào mảng tại vị trí đó và kiểm tra chiến thắng thông qua checkWin
 
 function changeValue(x, y, element) {
-    
+
     if (inGame == false) return;
     if (A[x][y] != '') return;
     count++;
@@ -110,7 +110,7 @@ function draw() {
         data += '<tr>';
         for (j = 0; j < 16; j++) {
             if (i == 0 && j == 0) {
-                data += ' <td> &nbsp; </td>';
+                data += '<td style="color: blue; background-color: rgb(106, 183, 210);"> Pi97 </td>';
             }
             else if (i == 0 || j == 0) {
                 data += '<td>' + A[i][j] + '</td>';
