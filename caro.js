@@ -29,16 +29,21 @@ function start() {
 // changeValue cho phép em thay đổi player là x hay o, ghi vào mảng tại vị trí đó và kiểm tra chiến thắng thông qua checkWin
 
 function changeValue(x, y, element) {
+    
     if (inGame == false) return;
     if (A[x][y] != '') return;
     count++;
+
     if (count % 2 == 0) {
         player = 'x';
         turn = count / 2;
+        element.style.color = "red"
         document.getElementById("pl").innerHTML = '<img src="images/Opng.png">';
+        
     } else {
         player = 'o';
         turn = (count + 1) / 2;
+        element.style.color = "blue"
         document.getElementById("pl").innerHTML = '<img src="images/Xpng.png">';
     }
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
@@ -91,7 +96,7 @@ function checkWin(x, y, player, turn) {
 }
 // notify thông báo 
 function notify(player, turn) {
-    alert(`${player} win with ${turn} turn`);
+    alert(`Player: ${player} wins in ${turn} turns`);
     inGame = false;
 }
 

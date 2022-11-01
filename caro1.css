@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 body{
     background: url(https://bizweb.dktcdn.net/100/330/208/files/hinh-nen-kimetsu-yaiba-ngau-6-1.jpg?v=1649906743187);
     width: 100%;
     height: 100%;
+    font-family: 'Fredoka One', cursive;
 }
 table{
     border: 3px solid rgb(43, 12, 102);
@@ -26,9 +29,9 @@ tr,td{
 
 }
 .big-text{
-    font-size: 20px;
+    font-size:30px;
     font-weight: bold;
-    color: red;
+    color: rgb(13, 1, 77);
 }
 table td{
     transition: all .2s linear;
