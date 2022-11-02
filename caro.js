@@ -47,14 +47,14 @@ function changeValue(x, y, element) {
         document.getElementById("pl").innerHTML = '<img src="images/Xpng.png">';
     }
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
-    element.innerText = player;
+    element.innerHTML = player;
     A[x][y] = player;
     checkWin(x, y, player, turn, element);
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
 
-function checkWin(x, y, player, turn, element) {
+function checkWin(x, y, player, turn,element) {
     for (let i = 1; i <= 11; i++) {
         for (let j = 1; j <= 15; j++) {
             if (i == x && j == y) {
@@ -86,9 +86,8 @@ function checkWin(x, y, player, turn, element) {
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
                     (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
                 ) {
-                    notify(player, turn);
+                    notify(player, turn);         
                 }
-
             }
         }
     }
