@@ -10,26 +10,44 @@
 
 </head>
 <audio src="music/Giai-dieu-mo-dau-vui-ve-ngan-www_tiengdong_com.mp3" autoplay="true" loop="true"></audio>
+
 <body>
     <div class="wrap">
         <div class=" leftside ">
             <br><br>
             <span id="turn" class="text">Turn: 1</span>
             <br>
-            <span><p class="text">Player:</p></span><br>
+            <span>
+                <p class="text">Player:</p>
+            </span><br>
             <div id="pl"><img src="images/Opng.png"></div>
             <br><br><br><br>
             <input type="button" value="Reset" id="resetBtn">
         </div>
         <div class="rightside">
-            <span><h1 class="title">CARO GAME PVP</h1></span>
+            <span>
+                <h1 class="title">CARO GAME PVP</h1>
+            </span>
             <table>
                 <tbody id="caroTable"></tbody>
             </table>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="wintext"></p>
+        </div>
+    </div>
+
     <script src="caro.js">
     </script>
 
 </body>
+
+
 </html>

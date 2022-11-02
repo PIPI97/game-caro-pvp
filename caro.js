@@ -39,7 +39,7 @@ function changeValue(x, y, element) {
         turn = count / 2;
         element.style.color = "red"
         document.getElementById("pl").innerHTML = '<img src="images/Opng.png">';
-        
+
     } else {
         player = 'o';
         turn = (count + 1) / 2;
@@ -49,16 +49,16 @@ function changeValue(x, y, element) {
     document.getElementById('turn').innerHTML = `Turn: ${turn}`;
     element.innerText = player;
     A[x][y] = player;
-    checkWin(x, y, player, turn,element);  
+    checkWin(x, y, player, turn, element);
 }
 
 // checkWin để xem các trường hợp làm cho player win và thông báo qua notify()
 
-function checkWin(x, y, player, turn,element) {
+function checkWin(x, y, player, turn, element) {
     for (let i = 1; i <= 11; i++) {
         for (let j = 1; j <= 15; j++) {
             if (i == x && j == y) {
-                    // chiều ngang đúng
+                // chiều ngang đúng
                 if ((A[i][j] == player && A[i][j + 1] == player && A[i][j + 2] == player && A[i][j + 3] == player && A[i][j + 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j - 3] == player && A[i][j - 4] == player) ||
                     (A[i][j] == player && A[i][j - 1] == player && A[i][j - 2] == player && A[i][j + 1] == player && A[i][j + 2] == player) ||
@@ -84,7 +84,7 @@ function checkWin(x, y, player, turn,element) {
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player && A[i - 4][j + 4] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player) ||
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
-                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player) 
+                    (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
                 ) {
                     notify(player, turn);
                 }
@@ -95,7 +95,8 @@ function checkWin(x, y, player, turn,element) {
 }
 // notify thông báo 
 function notify(player, turn) {
-    alert(`Player: ${player} wins in ${turn} turns`);
+    modal.style.display = "block"
+    wintext.innerHTML=`Player: ${player} wins in ${turn} turns`;
     inGame = false;
 }
 
@@ -133,5 +134,20 @@ resetBtn.onclick = function () {
     // window.location.reload(); load lại trang cũng là 1 cách mà em nghĩ đến
 }
 
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
