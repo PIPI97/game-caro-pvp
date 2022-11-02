@@ -142,7 +142,6 @@ img {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
     margin: auto;
     margin-top: 10%;
     padding: 20px;
@@ -153,8 +152,8 @@ img {
     background: url(images/winimage2.jpg);
     font-size: 50px;
     color: rgb(4, 4, 4);
-    padding-left: 150px;
-    
+    padding-left: 150px;  
+    box-shadow: 0 0 50px 0;
 }
 
 /* The Close Button */
@@ -164,10 +163,7 @@ img {
     font-size: 28px;
     font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
+.close:hover {
     color: #000;
-    text-decoration: none;
     cursor: pointer;
 }

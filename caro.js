@@ -116,13 +116,14 @@ function draw() {
                 data += '<td style="cursor: no-drop;">' + A[i][j] + '</td>';
             }
             else {
-                data += `<td class="big-text" onclick ="changeValue(${i},${j},this);">  </td>`;
+                data += `<td class="big-text" id='textwin' onclick ="changeValue(${i},${j},this);">  </td>`;
             }
         } data += '</tr>';
     }
     document.getElementById('caroTable').innerHTML = data;
 
 }
+
 // resetBtn giúp reset lại game 
 
 resetBtn.onclick = function () {
@@ -134,18 +135,16 @@ resetBtn.onclick = function () {
     // window.location.reload(); load lại trang cũng là 1 cách mà em nghĩ đến
 }
 
-// Get the modal
+// tạo 1 bảng modal box
+    // lấy id bảng modal và id close
 var modal = document.getElementById("myModal");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
+    // sự kiện clicks close
 span.onclick = function () {
     modal.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
+    // clicks ngoài màn hình 
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
