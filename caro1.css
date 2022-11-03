@@ -162,13 +162,13 @@ img {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    border: 4px solid rgb(239, 7, 7);
+    border: 4px solid rgb(223, 65, 65);
     border-radius: 30%;
     width: 25px;
     height: 25px;
     padding-left: 12px;
-    padding-bottom: 12px;
-    background-color: rgb(243, 170, 170);
+    padding-bottom: 14px;
+    background-color: rgb(230, 93, 93);
     
 }
 .close:hover {
