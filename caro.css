@@ -38,12 +38,12 @@ img {
     background-color: rgb(176, 182, 234);
     border-radius: 20px;
     font-size: 20px;
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .buttonPlay:hover {
     background-color: rgb(27, 128, 142);
     cursor: pointer;
     transform: scale(1.3);
-    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .image{
     width: 80px;
