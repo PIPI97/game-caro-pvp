@@ -144,7 +144,7 @@ span.onclick = function () {
     modal.style.display = "none";
 }
     // clicks ngoài màn hình 
-window.onclick = function (event) {
+document.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
