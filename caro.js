@@ -86,7 +86,7 @@ function checkWin(x, y, player, turn,element) {
                     (A[i][j] == player && A[i - 1][j + 1] == player && A[i + 1][j - 1] == player && A[i + 2][j - 2] == player && A[i + 3][j - 3] == player) ||
                     (A[i][j] == player && A[i + 1][j - 1] == player && A[i - 1][j + 1] == player && A[i - 2][j + 2] == player && A[i - 3][j + 3] == player)
                 ) {
-                    notify(player, turn);         
+                    notify(player, turn);       
                 }
             }
         }
